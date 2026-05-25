@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R3DREPS | Empowered Nutrition & Strength Coaching</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff5f5',
+                            100: '#ffe3e3',
+                            500: '#ff1e27', // Signature R3DREPS Red
+                            600: '#e0121a',
+                            700: '#c90a11',
+                            800: '#9c0309',
+                            900: '#7a0004',
+                            950: '#0d0202',
+                        },
+                        dark: {
+                            950: '#000000', // Pure Black
+                            900: '#0a0a0a', // Deep Charcoal
+                            800: '#121212', // Card Surface
+                            700: '#1c1c1c', // Component Outline
+                            600: '#262626', // Borders
+                            500: '#404040', // Muted text/icons
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Oswald for bold athletic heads, Inter for clean copy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Custom Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ff1e27;
+            border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #b01e1e;
+        }
+        
+        /* Neon text pulse */
+        .neon-glow-red {
+            text-shadow: 0 0 10px rgba(255, 30, 39, 0.6), 0 0 20px rgba(255, 30, 39, 0.3);
+        }
+        
+        .border-glow {
+            box-shadow: 0 0 15px rgba(255, 30, 39, 0.15);
+        }
+
+        /* Circular Progress Animation */
+        .circle-progress {
+            transition: stroke-dashoffset 0.6s ease-out;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+</head>
+<body class="bg-dark-950 text-neutral-200 font-sans antialiased custom-scrollbar">
+
+    <!-- Navigation Bar (WHGym/R3DREPS Industrial Style) -->
+    <nav class="sticky top-0 z-50 bg-dark-950/95 backdrop-blur-md border-b border-dark-600 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <!-- Brand Logo & Slogan combo -->
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center space-x-3 group">
+                        <!-- Custom SVG Logo reflecting Image 2 logo -->
+                        <div class="relative w-11 h-11 flex items-center justify-center rounded-full border border-brand-500 bg-black overflow-hidden group-hover:scale-105 transition-transform">
+                            <svg viewBox="0 0 100 100" class="w-9 h-9">
+                                <!-- Red Circle Frame -->
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="#ff1e27" stroke-width="6" stroke-dasharray="240" stroke-dashoffset="10"/>
+                                <!-- Stylized lightning 'R' in white/red -->
+                                <path d="M32,25 H55 C65,25 72,30 72,40 C72,48 66,52 56,53 L70,75 H56 L44,53 H42 V75 H32 Z M42,44 H52 C57,44 60,42 60,37 C60,33 57,31 52,31 H42 Z" fill="#ffffff"/>
+                                <polygon points="38,45 48,58 35,63" fill="#ff1e27" />
+                            </svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-display text-2xl font-bold tracking-wider text-white">
+                                R3D<span class="text-brand-500">REPS</span>
+                            </span>
+                            <span class="text-[9px] text-neutral-400 tracking-[0.2em] font-medium leading-none">NO HYPE. JUST DISCIPLINE.</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-neutral-400 hover:text-brand-500 font-display uppercase tracking-widest text-sm transition-colors">My Story</a>
+                    <a href="#myths" class="text-neutral-400 hover:text-brand-500 font-display uppercase tracking-widest text-sm transition-colors">Myth Busters</a>
+                    <a href="#packages" class="text-neutral-400 hover:text-brand-500 font-display uppercase tracking-widest text-sm transition-colors">Coaching Deals</a>
+                    <a href="#customizer" class="text-neutral-400 hover:text-brand-500 font-display uppercase tracking-widest text-sm transition-colors">Dashboard Builder</a>
+                    <a href="#testimonials" class="text-neutral-400 hover:text-brand-500 font-display uppercase tracking-widest text-sm transition-colors">Athletes</a>
+                    <a href="#contact" class="bg-brand-500 hover:bg-brand-600 text-white font-display uppercase tracking-widest text-xs px-6 py-3 border border-brand-600 transition-all font-semibold hover:shadow-[0_0_15px_rgba(255,30,39,0.5)] transform hover:-translate-y-0.5">
+                        Claim Consult
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-neutral-400 hover:text-brand-500 focus:outline-none rounded-lg p-2">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-950 border-b border-dark-600 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block px-3 py-2 rounded-lg text-neutral-300 hover:bg-dark-800 hover:text-brand-500 font-display uppercase tracking-wider">My Story</a>
+            <a href="#myths" class="block px-3 py-2 rounded-lg text-neutral-300 hover:bg-dark-800 hover:text-brand-500 font-display uppercase tracking-wider">Myth Busters</a>
+            <a href="#packages" class="block px-3 py-2 rounded-lg text-neutral-300 hover:bg-dark-800 hover:text-brand-500 font-display uppercase tracking-wider">Coaching Deals</a>
+            <a href="#customizer" class="block px-3 py-2 rounded-lg text-neutral-300 hover:bg-dark-800 hover:text-brand-500 font-display uppercase tracking-wider">Dashboard Builder</a>
+            <a href="#testimonials" class="block px-3 py-2 rounded-lg text-neutral-300 hover:bg-dark-800 hover:text-brand-500 font-display uppercase tracking-wider">Athletes</a>
+            <a href="#contact" class="block w-full text-center bg-brand-500 text-white py-3 font-display uppercase tracking-widest text-xs font-bold">
+                Claim Consult
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Aggressive Dark Mode Accentuation) -->
+    <header class="relative overflow-hidden py-20 lg:py-32 bg-dark-950">
+        <!-- Background decorative elements reminiscent of WH Gym and neon rings -->
+        <div class="absolute top-20 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-neutral-900 rounded-full blur-3xl -z-10"></div>
+        
+        <!-- Industrial Grid Overlay -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:30px_30px] opacity-40 -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Block -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center px-4 py-1.5 bg-dark-800 border border-brand-500/30 text-brand-500 text-xs font-display uppercase tracking-widest">
+                        <i class="fa-solid fa-bolt mr-2 animate-pulse text-brand-500"></i> Specialized Nutrition & Strength Framework
+                    </span>
+                    <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-white uppercase tracking-tight leading-none">
+                        SHED LIES.<br>BUILD <span class="text-brand-500 neon-glow-red">RAW POWER</span>.
+                    </h1>
+                    <p class="text-lg text-neutral-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        No endless hours of draining cardio. No extreme 1,200-calorie restrictive cycles. I help committed women optimize their endocrine profile, lift with intense technical precision, and build structured, scientific nutritional freedom.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 pt-4">
+                        <a href="#packages" class="w-full sm:w-auto text-center bg-brand-500 hover:bg-brand-600 text-white font-display uppercase tracking-widest text-sm font-bold px-8 py-4 transition-all shadow-lg hover:shadow-[0_0_20px_rgba(255,30,39,0.4)]">
+                            Coaching Deals
+                        </a>
+                        <a href="#customizer" class="w-full sm:w-auto text-center bg-dark-800 border-2 border-dark-600 hover:border-brand-500 text-white font-display uppercase tracking-widest text-sm font-semibold px-8 py-4 transition-all flex items-center justify-center space-x-2">
+                            <span>Interactive Customizer</span>
+                            <i class="fa-solid fa-gamepad text-brand-500"></i>
+                        </a>
+                    </div>
+
+                    <!-- Small Athletic Proof -->
+                    <div class="pt-6 flex flex-wrap justify-center lg:justify-start items-center gap-6 text-neutral-500 text-xs font-display tracking-widest uppercase">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-shield-halved text-brand-500"></i>
+                            <span>100% Customized Blocks</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-flask text-brand-500"></i>
+                            <span>Science Over Superstition</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-heart-pulse text-brand-500"></i>
+                            <span>Metabolic Rehabilitation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graphic Portrait Container (Before & After Teaser - Dark Mode Optimized) -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Glowing Backlighting -->
+                        <div class="absolute inset-0 bg-brand-500 rounded-3xl opacity-10 blur-xl"></div>
+                        
+                        <!-- Main Card -->
+                        <div class="relative bg-dark-900 border border-dark-600 rounded-2xl p-6 shadow-2xl">
+                            <!-- Header Info -->
+                            <div class="flex items-center space-x-4 pb-6 border-b border-dark-600">
+                                <div class="w-14 h-14 rounded-full bg-brand-500/10 border border-brand-500/40 flex items-center justify-center text-brand-500">
+                                    <i class="fa-solid fa-user-ninja text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-display text-lg uppercase tracking-wide text-white">Coach & Founder</h3>
+                                    <p class="text-[10px] text-brand-500 tracking-wider font-display uppercase">Certified Nutrition Specialist & Women's Strength Coach</p>
+                                </div>
+                            </div>
+
+                            <!-- Teaser Transformation Graphic -->
+                            <div class="py-6 space-y-4">
+                                <h4 class="text-xs font-display uppercase tracking-widest text-neutral-400 text-center">Metabolic Shift Paradigm</h4>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-dark-950 rounded-xl p-4 text-center border border-neutral-800">
+                                        <span class="text-[10px] bg-red-950 text-red-400 border border-red-900 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">The Restrictive Trap</span>
+                                        <div class="my-3 text-3xl">🚫🍳💔</div>
+                                        <p class="text-xs font-bold font-display uppercase text-neutral-300">1,200 Calories</p>
+                                        <p class="text-[10px] text-neutral-500 mt-1 leading-relaxed">Exhausted, Constant Cardio, Destroyed Endocrine System</p>
+                                    </div>
+                                    <div class="bg-dark-950 rounded-xl p-4 text-center border border-brand-500/30">
+                                        <span class="text-[10px] bg-brand-950 text-brand-500 border border-brand-900 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">R3DREPS System</span>
+                                        <div class="my-3 text-3xl">💪🥑⚡</div>
+                                        <p class="text-xs font-bold font-display uppercase text-brand-500">2,100+ Calories</p>
+                                        <p class="text-[10px] text-neutral-400 mt-1 leading-relaxed">High Muscle Output, Dynamic Hormones, Shredded curves</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial Quote Preview -->
+                            <div class="bg-dark-950 rounded-xl p-4 border border-dark-600 relative">
+                                <span class="absolute top-1 right-3 text-4xl text-brand-500/20 font-serif">“</span>
+                                <p class="text-xs italic text-neutral-400 leading-relaxed relative z-10">
+                                    "I was terrified of carbs and weights. Coach showed me the power of fuel. Now I eat 2,000+ calories and my waist is tighter than ever."
+                                </p>
+                                <p class="text-[10px] font-display uppercase tracking-widest text-brand-500 mt-2 text-right">— Sarah M., Athlete</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About & Journey Section (Brutalist Athletic Grids) -->
+    <section id="about" class="py-20 bg-dark-900 border-y border-dark-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-display tracking-widest uppercase text-xs">Origin Protocol</span>
+                <h2 class="font-display text-4xl sm:text-5xl font-bold text-white uppercase tracking-tight mt-2">
+                    My Evolution: Before and After
+                </h2>
+                <div class="w-20 h-1 bg-brand-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Journey Text Details -->
+                <div class="lg:col-span-7 space-y-6">
+                    <h3 class="font-display text-2xl lg:text-3xl font-bold text-white uppercase tracking-wide">
+                        The Starvation Trap That Fueled My Fire
+                    </h3>
+                    <p class="text-neutral-400 leading-relaxed font-light">
+                        I spent years trapped in the toxic cycles promoted by commercial fit-spos. I was told that looking lean required infinite cardio sessions and starvation targets. I starved, binged, wrecked my metabolic rhythm, and experienced critical burnout.
+                    </p>
+                    <p class="text-neutral-400 leading-relaxed font-light">
+                        My thyroid crashed. My hair fell out. I lost my menstrual cycle and constant brain fog took over. I was a shell of myself, chasing an unhealthy aesthetic with a completely broken internal system.
+                    </p>
+                    
+                    <div class="border-l-4 border-brand-500 pl-4 py-2 my-4 bg-dark-950/80">
+                        <p class="text-neutral-200 italic font-medium text-sm">
+                            "I stopped running. I started eating. I picked up heavy barbells, studied clinical endocrinology, sports nutrition, and behavioral patterns. I discovered that women require fuel and load to thrive."
+                        </p>
+                    </div>
+
+                    <p class="text-neutral-400 leading-relaxed font-light">
+                        This discovery became the bedrock of **R3DREPS**. No fads. No standard cookie-cutter scripts. We focus on progressive muscular overload, customized biochemical fueling, and absolute system rehabilitation.
+                    </p>
+                </div>
+
+                <!-- Transformation Visualization Block -->
+                <div class="lg:col-span-5 bg-dark-950 border border-dark-600 rounded-xl p-6 shadow-md space-y-6">
+                    <h3 class="font-display text-xl font-bold text-white uppercase tracking-widest text-center">Chronological Metrics</h3>
+                    
+                    <div class="space-y-4">
+                        <!-- Before Aspect -->
+                        <div class="bg-dark-800 border-l-4 border-red-500 p-4 rounded-lg">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <span class="bg-red-500/10 border border-red-500/30 text-red-500 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Restrictive Past (The Trap)</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-neutral-400">
+                                <li class="flex items-start"><i class="fa-solid fa-xmark text-red-500 mr-2 mt-0.5"></i> 1,100 - 1,200 calories high-restrictive diet</li>
+                                <li class="flex items-start"><i class="fa-solid fa-xmark text-red-500 mr-2 mt-0.5"></i> Endless grueling cardio sessions on stairs</li>
+                                <li class="flex items-start"><i class="fa-solid fa-xmark text-red-500 mr-2 mt-0.5"></i> Severe fear of dietary carbohydrates & weight rooms</li>
+                                <li class="flex items-start"><i class="fa-solid fa-xmark text-red-500 mr-2 mt-0.5"></i> Hormonal fatigue, thyroid decline, gut issues</li>
+                            </ul>
+                        </div>
+
+                        <!-- Spark Divider -->
+                        <div class="flex justify-center my-2">
+                            <span class="bg-brand-500/10 border border-brand-500/30 text-brand-500 px-3 py-1.5 rounded-full text-[10px] font-display uppercase tracking-widest inline-flex items-center space-x-1">
+                                <i class="fa-solid fa-bolt animate-pulse"></i>
+                                <span>The Metabolic Shift</span>
+                            </span>
+                        </div>
+
+                        <!-- After Aspect -->
+                        <div class="bg-dark-800 border-l-4 border-brand-500 p-4 rounded-lg">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <span class="bg-brand-500/10 border border-brand-500/30 text-brand-500 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Current Protocol (R3DREPS)</span>
+                            </div>
+                            <ul class="space-y-2 text-xs text-neutral-300">
+                                <li class="flex items-start"><i class="fa-solid fa-check text-brand-500 mr-2 mt-0.5"></i> 2,100+ calories daily rich in premium micro/macronutrients</li>
+                                <li class="flex items-start"><i class="fa-solid fa-check text-brand-500 mr-2 mt-0.5"></i> Heavily structured compound lifts 3-4 days a week</li>
+                                <li class="flex items-start"><i class="fa-solid fa-check text-brand-500 mr-2 mt-0.5"></i> Restored metabolism, balanced menstrual cycle & thyroid</li>
+                                <li class="flex items-start"><i class="fa-solid fa-check text-brand-500 mr-2 mt-0.5"></i> Deep mental food peace & optimized athletic output</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Myth Busters Section (WH Gym Interactive Cards) -->
+    <section id="myths" class="py-20 bg-dark-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-display tracking-widest uppercase text-xs">Anti-Fad Propaganda</span>
+                <h2 class="font-display text-4xl sm:text-5xl font-bold text-white uppercase tracking-tight mt-2">
+                    Industry Lies Exposed
+                </h2>
+                <p class="text-neutral-400 mt-4 font-light">
+                    The fitness ecosystem profits by keeping you insecure and locked into cycles of perpetual failure. Let's shatter the static. <strong class="text-brand-500">Click a card to reveal the scientific truth.</strong>
+                </p>
+                <div class="w-20 h-1 bg-brand-500 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Myth Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Myth Card 1 -->
+                <div onclick="toggleMyth(1)" class="cursor-pointer group relative bg-dark-900 rounded-xl p-6 border border-dark-600 hover:border-brand-500/60 shadow-lg transition-all duration-300 overflow-hidden min-h-[220px] flex flex-col justify-between">
+                    <div id="myth-front-1" class="transition-all duration-300">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-red-500/10 border border-red-500/30 text-red-500 text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">Myth 01</span>
+                            <span class="text-dark-500 group-hover:text-brand-500 transition-colors"><i class="fa-solid fa-circle-question text-xl"></i></span>
+                        </div>
+                        <h4 class="font-display text-xl font-bold uppercase text-white mb-2 leading-snug">"Heavy lifting will turn you bulky or look masculine."</h4>
+                        <p class="text-neutral-400 text-xs">The ultimate barrier built to keep women out of the power racks...</p>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between text-brand-500 font-display uppercase tracking-wider text-xs font-bold">
+                        <span>Deploy Truth</span>
+                        <i class="fa-solid fa-arrow-right-long group-hover:translate-x-1.5 transition-transform"></i>
+                    </div>
+
+                    <!-- Flip Back Container -->
+                    <div id="myth-back-1" class="hidden absolute inset-0 bg-dark-950 border border-brand-500 text-white p-6 flex flex-col justify-between transition-all duration-300">
+                        <div>
+                            <span class="bg-brand-500 text-white text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">The Bio-Reality</span>
+                            <h4 class="font-display text-lg font-bold mt-2 text-brand-500 uppercase">Lifting Sculpts, Tones & Tightens!</h4>
+                            <p class="text-neutral-300 text-[11px] leading-relaxed mt-2">
+                                Women have up to 15x less testosterone than men, making rapid hyper-muscular bulking biologically impossible without exogenous assistance. Lifting heavy density shapes deep musculature, raises metabolic energy expenditure, and delivers true athletic tone.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between text-brand-500 text-[10px] font-display uppercase tracking-widest font-bold">
+                            <span>Reverse Card</span>
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Myth Card 2 -->
+                <div onclick="toggleMyth(2)" class="cursor-pointer group relative bg-dark-900 rounded-xl p-6 border border-dark-600 hover:border-brand-500/60 shadow-lg transition-all duration-300 overflow-hidden min-h-[220px] flex flex-col justify-between">
+                    <div id="myth-front-2" class="transition-all duration-300">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-red-500/10 border border-red-500/30 text-red-500 text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">Myth 02</span>
+                            <span class="text-dark-500 group-hover:text-brand-500 transition-colors"><i class="fa-solid fa-circle-question text-xl"></i></span>
+                        </div>
+                        <h4 class="font-display text-xl font-bold uppercase text-white mb-2 leading-snug">"Carbs are evil and immediately store as fat."</h4>
+                        <p class="text-neutral-400 text-xs">Standard restrictive advice used to sell dynamic fat burners...</p>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between text-brand-500 font-display uppercase tracking-wider text-xs font-bold">
+                        <span>Deploy Truth</span>
+                        <i class="fa-solid fa-arrow-right-long group-hover:translate-x-1.5 transition-transform"></i>
+                    </div>
+
+                    <!-- Flip Back Container -->
+                    <div id="myth-back-2" class="hidden absolute inset-0 bg-dark-950 border border-brand-500 text-white p-6 flex flex-col justify-between transition-all duration-300">
+                        <div>
+                            <span class="bg-brand-500 text-white text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">The Bio-Reality</span>
+                            <h4 class="font-display text-lg font-bold mt-2 text-brand-500 uppercase">Carbs are performance fuels!</h4>
+                            <p class="text-neutral-300 text-[11px] leading-relaxed mt-2">
+                                Carbohydrates fuel thyroid conversion (active T3), coordinate glycogen replacement in muscles, and lower systemic cortisol (stress). Wrecking your carbohydrate intake crashes your metabolic baseline and signals biological starvation.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between text-brand-500 text-[10px] font-display uppercase tracking-widest font-bold">
+                            <span>Reverse Card</span>
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Myth Card 3 -->
+                <div onclick="toggleMyth(3)" class="cursor-pointer group relative bg-dark-900 rounded-xl p-6 border border-dark-600 hover:border-brand-500/60 shadow-lg transition-all duration-300 overflow-hidden min-h-[220px] flex flex-col justify-between">
+                    <div id="myth-front-3" class="transition-all duration-300">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-red-500/10 border border-red-500/30 text-red-500 text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">Myth 03</span>
+                            <span class="text-dark-500 group-hover:text-brand-500 transition-colors"><i class="fa-solid fa-circle-question text-xl"></i></span>
+                        </div>
+                        <h4 class="font-display text-xl font-bold uppercase text-white mb-2 leading-snug">"Endless Cardio is the primary tool for fat loss."</h4>
+                        <p class="text-neutral-400 text-xs">The hamster wheel routine designed for minimal muscular gain...</p>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between text-brand-500 font-display uppercase tracking-wider text-xs font-bold">
+                        <span>Deploy Truth</span>
+                        <i class="fa-solid fa-arrow-right-long group-hover:translate-x-1.5 transition-transform"></i>
+                    </div>
+
+                    <!-- Flip Back Container -->
+                    <div id="myth-back-3" class="hidden absolute inset-0 bg-dark-950 border border-brand-500 text-white p-6 flex flex-col justify-between transition-all duration-300">
+                        <div>
+                            <span class="bg-brand-500 text-white text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">The Bio-Reality</span>
+                            <h4 class="font-display text-lg font-bold mt-2 text-brand-500 uppercase">Resistance generates metabolic burn!</h4>
+                            <p class="text-neutral-300 text-[11px] leading-relaxed mt-2">
+                                Excessive chronic cardio triggers excessive muscle wasting and metabolic slowing down-regulation. Lifting heavy density constructs metabolically active contractile muscle tissue, burning energy even while at rest. Cardio is for your heart; load is for your shape.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between text-brand-500 text-[10px] font-display uppercase tracking-widest font-bold">
+                            <span>Reverse Card</span>
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Specialized Coaching Section -->
+    <section class="py-20 bg-dark-900 border-t border-dark-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Icon/Illustration Grid representing pillars of health -->
+                <div class="grid grid-cols-2 gap-4 order-2 lg:order-1">
+                    <div class="bg-dark-950 p-6 rounded-xl border border-dark-600 hover:border-brand-500/30 transition-all flex flex-col justify-between min-h-[160px]">
+                        <span class="text-brand-500 text-2xl mb-2"><i class="fa-solid fa-dna animate-pulse"></i></span>
+                        <div>
+                            <h4 class="font-display text-md uppercase font-bold text-white mb-1">Endocrine Optimization</h4>
+                            <p class="text-[11px] text-neutral-400 leading-relaxed">Aligning your macro phases directly to your biological clock & thyroid rhythms.</p>
+                        </div>
+                    </div>
+                    <div class="bg-dark-950 p-6 rounded-xl border border-dark-600 hover:border-brand-500/30 transition-all flex flex-col justify-between min-h-[160px]">
+                        <span class="text-brand-500 text-2xl mb-2"><i class="fa-solid fa-infinity"></i></span>
+                        <div>
+                            <h4 class="font-display text-md uppercase font-bold text-white mb-1">Dietary Non-Restriction</h4>
+                            <p class="text-[11px] text-neutral-400 leading-relaxed">Integrate actual whole carbs, lipids, and delicious foods with precise bio-tracking.</p>
+                        </div>
+                    </div>
+                    <div class="bg-dark-950 p-6 rounded-xl border border-dark-600 hover:border-brand-500/30 transition-all flex flex-col justify-between min-h-[160px]">
+                        <span class="text-brand-500 text-2xl mb-2"><i class="fa-solid fa-gauge-high"></i></span>
+                        <div>
+                            <h4 class="font-display text-md uppercase font-bold text-white mb-1">Mechanical Load progression</h4>
+                            <p class="text-[11px] text-neutral-400 leading-relaxed">Systematic, technical load increases to trigger muscle structural toning with no wasted reps.</p>
+                        </div>
+                    </div>
+                    <div class="bg-dark-950 p-6 rounded-xl border border-dark-600 hover:border-brand-500/30 transition-all flex flex-col justify-between min-h-[160px]">
+                        <span class="text-brand-500 text-2xl mb-2"><i class="fa-solid fa-compass"></i></span>
+                        <div>
+                            <h4 class="font-display text-md uppercase font-bold text-white mb-1">Sustainable Lifestyle</h4>
+                            <p class="text-[11px] text-neutral-400 leading-relaxed">We construct patterns, systems, and mindset shifts that stay active for decades.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Content Block -->
+                <div class="space-y-6 order-1 lg:order-2">
+                    <span class="text-brand-500 font-display tracking-widest uppercase text-xs">Biochemical Sovereignty</span>
+                    <h2 class="font-display text-4xl sm:text-5xl font-bold text-white uppercase tracking-tight">
+                        We Are Not Small Men.
+                    </h2>
+                    <p class="text-neutral-400 leading-relaxed font-light">
+                        General commercial fitness treats everyone's biology as identical. It ignores complex cortisol cycles, progesterone-estrogen balance, thyroid thresholds, and systemic stress parameters specific to women.
+                    </p>
+                    <p class="text-neutral-400 leading-relaxed font-light">
+                        My framework is designed entirely around female endocrine parameters, helping you train to your metabolic peak, support natural hormones, and claim high-level muscle conditioning safely.
+                    </p>
+                    <div class="pt-2">
+                        <a href="#customizer" class="inline-flex items-center space-x-2 bg-brand-500 hover:bg-brand-600 text-white font-display uppercase tracking-widest text-xs font-semibold px-6 py-4 shadow-md transition-all">
+                            <span>Build Sample Blueprint</span>
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Plan Preview Customizer & Dashboard (Matching Image 1 Dashboard) -->
+    <section id="customizer" class="py-20 bg-dark-950 border-t border-dark-600 relative overflow-hidden">
+        <!-- Visual light streak -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-500/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-500 font-display tracking-widest uppercase text-xs">R3DREPS Macro Engine</span>
+                <h2 class="font-display text-4xl sm:text-5xl font-bold text-white uppercase tracking-tight mt-2">
+                    Sample Blueprint Generator
+                </h2>
+                <p class="text-neutral-400 mt-4 font-light text-sm">
+                    Toggle your parameters below to test-drive our athletic formulation dashboard—simulated using the R3DREPS dark metrics panel.
+                </p>
+                <div class="w-20 h-1 bg-brand-500 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Customizer App Container (Industrial Dark Metal Interface) -->
+            <div class="bg-dark-900 rounded-2xl border border-dark-600 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 max-w-6xl mx-auto">
+                
+                <!-- INPUT CONTROLS SIDE -->
+                <div class="lg:col-span-5 p-8 border-b lg:border-b-0 lg:border-r border-dark-600 bg-dark-950/60">
+                    <h3 class="font-display text-lg font-bold text-white uppercase tracking-wider mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-brand-500"></i> Set Your Protocol
+                    </h3>
+
+                    <form id="plan-form" class="space-y-6">
+                        <!-- Primary Goal -->
+                        <div>
+                            <label class="block text-xs font-display uppercase tracking-wider text-neutral-400 mb-2">Target Goal</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button type="button" onclick="setGoal('fat-loss')" id="btn-fat-loss" class="goal-btn py-3 px-4 rounded-lg text-xs font-display uppercase tracking-widest border transition-all flex flex-col items-center justify-center space-y-1.5 bg-dark-900 border-dark-600 text-neutral-400">
+                                    <i class="fa-solid fa-fire text-lg text-brand-500"></i>
+                                    <span>Fat Loss / Tone</span>
+                                </button>
+                                <button type="button" onclick="setGoal('muscle-energy')" id="btn-muscle-energy" class="goal-btn py-3 px-4 rounded-lg text-xs font-display uppercase tracking-widest border transition-all flex flex-col items-center justify-center space-y-1.5 bg-dark-900 border-dark-600 text-neutral-400">
+                                    <i class="fa-solid fa-dumbbell text-lg text-brand-500"></i>
+                                    <span>Strength & Load</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Diet Preferences -->
+                        <div>
+                            <label class="block text-xs font-display uppercase tracking-wider text-neutral-400 mb-2">Dietary Paradigm</label>
+                            <select id="diet-preference" class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 text-neutral-200 rounded-lg px-4 py-3 text-xs font-display uppercase tracking-wider outline-none transition-all">
+                                <option value="balanced">Balanced (Premium Meats / Whole Carbs)</option>
+                                <option value="pescatarian">Pescatarian (Seafood + Greens)</option>
+                                <option value="vegetarian">Vegetarian (Dairy, Eggs + Micro-Proteins)</option>
+                                <option value="plant-based">Vegan / Full Plant Fuel</option>
+                            </select>
+                        </div>
+
+                        <!-- Workout Location -->
+                        <div>
+                            <label class="block text-xs font-display uppercase tracking-wider text-neutral-400 mb-2">Gym / Training Environment</label>
+                            <select id="workout-env" class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 text-neutral-200 rounded-lg px-4 py-3 text-xs font-display uppercase tracking-wider outline-none transition-all">
+                                <option value="gym">Barbells & Cables (Power Racks)</option>
+                                <option value="home">Home Resistance Setup (DBs & High Bands)</option>
+                            </select>
+                        </div>
+
+                        <!-- Form Button -->
+                        <button type="button" onclick="generateSamplePlan()" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-display uppercase tracking-widest text-xs font-bold py-4 px-6 rounded-lg transition-all shadow-lg flex items-center justify-center space-x-2">
+                            <span>Execute Calculation</span>
+                            <i class="fa-solid fa-bolt"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- PREVIEW OUTPUT SIDE (MATCHING IMAGE 1 & 2 DESIGN) -->
+                <div class="lg:col-span-7 p-8 flex flex-col justify-between bg-dark-950 relative">
+                    
+                    <!-- Default Screen -->
+                    <div id="customizer-placeholder" class="h-full flex flex-col items-center justify-center text-center py-12 space-y-4">
+                        <div class="w-20 h-20 rounded-full border border-brand-500/30 flex items-center justify-center text-brand-500 text-3xl animate-pulse">
+                            <i class="fa-solid fa-gauge-high"></i>
+                        </div>
+                        <h4 class="font-display text-xl font-bold uppercase text-white tracking-widest">Awaiting Parameter Setup</h4>
+                        <p class="text-neutral-500 max-w-sm text-xs font-light">
+                            Select your fitness goal, nutrient profile, and environment, then execute calculation to initialize your R3DREPS interactive dashboard layout.
+                        </p>
+                    </div>
+
+                    <!-- Dynamic Metrics Dashboard (Derived directly from Image 1 style layout) -->
+                    <div id="customizer-output" class="hidden space-y-6">
+                        
+                        <!-- Image 1 Large Dashboard Reproduction Block -->
+                        <div class="bg-dark-900 border-2 border-brand-500/20 rounded-xl p-5 relative overflow-hidden">
+                            <!-- Dashboard Header styling -->
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-brand-500 text-base"><i class="fa-solid fa-fire-flame-curved"></i></span>
+                                    <span class="font-display font-bold text-xs uppercase tracking-widest text-neutral-300">CALORIE INTAKE</span>
+                                </div>
+                                <span class="bg-brand-500/10 border border-brand-500/30 text-brand-500 text-[9px] font-display uppercase tracking-widest px-2.5 py-0.5 rounded-full font-bold">R3DREPS</span>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                                <!-- Calorie Stat Column -->
+                                <div class="md:col-span-7 space-y-3">
+                                    <div class="bg-dark-950 border border-neutral-800 rounded-lg p-4">
+                                        <p class="text-[9px] text-neutral-500 font-display uppercase tracking-widest">System Caloric Target</p>
+                                        <p id="calc-calories" class="text-3xl font-display font-bold text-white tracking-wide">1,950 <span class="text-sm font-normal text-brand-500">kcal</span></p>
+                                    </div>
+                                    <div class="flex items-center space-x-2 bg-dark-950/60 p-2 rounded border border-neutral-900">
+                                        <span class="text-[9px] bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-1.5 py-0.5 rounded font-display tracking-widest uppercase">Target Focus</span>
+                                        <span id="calc-workouts" class="text-[10px] font-display uppercase tracking-wider text-neutral-300">Endocrine Safe</span>
+                                    </div>
+                                </div>
+
+                                <!-- Circular Progress Ring (Image 1 Style Red Ring) -->
+                                <div class="md:col-span-5 flex justify-center relative">
+                                    <svg width="120" height="120" class="relative">
+                                        <!-- Outer Grey Track -->
+                                        <circle cx="60" cy="60" r="50" fill="transparent" stroke="#1c1c1c" stroke-width="8" />
+                                        <!-- Inner Red Progress -->
+                                        <circle id="ring-calories" class="circle-progress" cx="60" cy="60" r="50" fill="transparent" stroke="#ff1e27" stroke-width="8" stroke-dasharray="314.16" stroke-dashoffset="100" />
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <i class="fa-solid fa-fire text-brand-500 text-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Macronutrient Circular Sub-dashboard (Matching bottom half of Image 1) -->
+                        <div class="grid grid-cols-3 gap-3">
+                            <!-- Protein card -->
+                            <div class="bg-dark-900 border border-dark-600 rounded-xl p-4 flex flex-col items-center justify-between text-center">
+                                <span class="text-xs font-display text-neutral-400 uppercase tracking-widest flex items-center gap-1">
+                                    <i class="fa-solid fa-drumstick-bite text-brand-500 text-xs"></i> Protein
+                                </span>
+                                <!-- SVG ring -->
+                                <div class="my-4 relative">
+                                    <svg width="60" height="60">
+                                        <circle cx="30" cy="30" r="24" fill="transparent" stroke="#1c1c1c" stroke-width="4" />
+                                        <circle id="ring-protein" class="circle-progress" cx="30" cy="30" r="24" fill="transparent" stroke="#ff1e27" stroke-width="4" stroke-dasharray="150.8" stroke-dashoffset="40" />
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <i class="fa-solid fa-egg text-[10px] text-brand-500"></i>
+                                    </div>
+                                </div>
+                                <span id="calc-protein" class="font-display font-bold text-white text-base tracking-wide">135g</span>
+                            </div>
+
+                            <!-- Carbs card -->
+                            <div class="bg-dark-900 border border-dark-600 rounded-xl p-4 flex flex-col items-center justify-between text-center">
+                                <span class="text-xs font-display text-neutral-400 uppercase tracking-widest flex items-center gap-1">
+                                    <i class="fa-solid fa-wheat-awn text-orange-500 text-xs"></i> Carbs
+                                </span>
+                                <!-- SVG ring -->
+                                <div class="my-4 relative">
+                                    <svg width="60" height="60">
+                                        <circle cx="30" cy="30" r="24" fill="transparent" stroke="#1c1c1c" stroke-width="4" />
+                                        <circle id="ring-carbs" class="circle-progress" cx="30" cy="30" r="24" fill="transparent" stroke="#f97316" stroke-width="4" stroke-dasharray="150.8" stroke-dashoffset="60" />
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <i class="fa-solid fa-bread-slice text-[10px] text-orange-500"></i>
+                                    </div>
+                                </div>
+                                <span id="calc-carbs" class="font-display font-bold text-white text-base tracking-wide">180g</span>
+                            </div>
+
+                            <!-- Fats card -->
+                            <div class="bg-dark-900 border border-dark-600 rounded-xl p-4 flex flex-col items-center justify-between text-center">
+                                <span class="text-xs font-display text-neutral-400 uppercase tracking-widest flex items-center gap-1">
+                                    <i class="fa-solid fa-seedling text-emerald-500 text-xs"></i> Fats
+                                </span>
+                                <!-- SVG ring -->
+                                <div class="my-4 relative">
+                                    <svg width="60" height="60">
+                                        <circle cx="30" cy="30" r="24" fill="transparent" stroke="#1c1c1c" stroke-width="4" />
+                                        <circle id="ring-fats" class="circle-progress" cx="30" cy="30" r="24" fill="transparent" stroke="#10b981" stroke-width="4" stroke-dasharray="150.8" stroke-dashoffset="90" />
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <i class="fa-solid fa-droplet text-[10px] text-emerald-500"></i>
+                                    </div>
+                                </div>
+                                <span id="calc-fats" class="font-display font-bold text-white text-base tracking-wide">60g</span>
+                            </div>
+                        </div>
+
+                        <!-- Meal Schedule Sample Output -->
+                        <div class="space-y-3">
+                            <h4 class="font-display text-sm font-bold text-white uppercase tracking-widest flex items-center gap-2 border-b border-dark-600 pb-2">
+                                <i class="fa-solid fa-calendar-day text-brand-500"></i> Scheduled Nutrient Blocks
+                            </h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="bg-dark-900 p-3 rounded-lg flex justify-between border border-dark-600">
+                                    <span class="font-display uppercase tracking-widest text-brand-500 w-24">Meal 01:</span>
+                                    <span id="meal-breakfast" class="text-neutral-300 flex-1">Initializing...</span>
+                                </div>
+                                <div class="bg-dark-900 p-3 rounded-lg flex justify-between border border-dark-600">
+                                    <span class="font-display uppercase tracking-widest text-brand-500 w-24">Meal 02:</span>
+                                    <span id="meal-lunch" class="text-neutral-300 flex-1">Initializing...</span>
+                                </div>
+                                <div class="bg-dark-900 p-3 rounded-lg flex justify-between border border-dark-600">
+                                    <span class="font-display uppercase tracking-widest text-brand-500 w-24">Meal 03:</span>
+                                    <span id="meal-dinner" class="text-neutral-300 flex-1">Initializing...</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Training block output sample -->
+                        <div class="space-y-3">
+                            <h4 class="font-display text-sm font-bold text-white uppercase tracking-widest flex items-center gap-2 border-b border-dark-600 pb-2">
+                                <i class="fa-solid fa-dumbbell text-brand-500"></i> Compound Load Block
+                            </h4>
+                            <div class="bg-dark-900 p-4 rounded-xl border border-dark-600">
+                                <p id="workout-focus" class="text-xs font-display uppercase tracking-widest text-brand-500 mb-2">Lower Body Glute Block</p>
+                                <ul id="workout-list" class="space-y-1.5 text-xs text-neutral-300 list-disc pl-4 leading-relaxed">
+                                    <!-- Dynamic list content -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Call To Action -->
+                        <div class="pt-4 border-t border-dark-600 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <p class="text-[10px] text-neutral-500 font-display uppercase tracking-widest">Get a 100% customized blueprint made entirely for you.</p>
+                            <a href="#contact" class="bg-brand-500 hover:bg-brand-600 text-white font-display uppercase tracking-widest text-xs font-bold py-2.5 px-5 rounded transition-all">
+                                Load Full Routine
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section (High contrast industrial design) -->
+    <section id="packages" class="py-20 bg-dark-900 border-y border-dark-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-display tracking-widest uppercase text-xs">Program Matrix</span>
+                <h2 class="font-display text-4xl sm:text-5xl font-bold text-white uppercase tracking-tight mt-2">
+                    Coaching Deals & Bundles
+                </h2>
+                <p class="text-neutral-400 mt-4 font-light text-sm">
+                    Select your execution level. Claim incredible, limited-time deals on specialized strength and nutrition packages.
+                </p>
+                <div class="w-20 h-1 bg-brand-500 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Packages Container -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Package 1 -->
+                <div class="bg-dark-950 rounded-2xl p-8 border border-dark-600 flex flex-col justify-between relative shadow-lg hover:border-brand-500 transition-all">
+                    <div>
+                        <span class="text-[9px] bg-dark-800 border border-dark-600 text-neutral-400 font-display font-bold px-3 py-1 rounded uppercase tracking-widest">Baseline</span>
+                        <h3 class="font-display text-2xl font-bold text-white uppercase tracking-wider mt-4">Nourished Fuel Plan</h3>
+                        <p class="text-xs text-neutral-500 mt-1 font-light">Custom metabolic nutrition protocol built for fat loss.</p>
+                        
+                        <div class="my-6">
+                            <span class="text-neutral-500 line-through text-xs">$199</span>
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-display font-bold text-brand-500">$129</span>
+                                <span class="text-neutral-500 text-xs ml-1">/ month</span>
+                            </div>
+                            <span class="text-[9px] text-brand-500 border border-brand-500/30 font-display tracking-widest uppercase bg-brand-500/5 px-2 py-0.5 rounded mt-2 inline-block">Save 35% Limited Slot</span>
+                        </div>
+
+                        <!-- Highlights list -->
+                        <ul class="space-y-3.5 border-t border-dark-600 pt-6">
+                            <li class="flex items-start text-xs text-neutral-400 leading-relaxed">
+                                <i class="fa-solid fa-circle-check text-brand-500 mr-2.5 mt-0.5"></i>
+                                <span>Fully Custom Weekly Meal Matrix</span>
+                            </li>
+                            <li class="flex items-start text-xs text-neutral-400 leading-relaxed">
+                                <i class="fa-solid fa-circle-check text-brand-500 mr-2.5 mt-0.5"></i>
+                                <span>Target Macro & Calorie Formulations</span>
+                            </li>
+                            <li class="flex items-start text-xs text-neutral-400 leading-relaxed">
+                                <i class="fa-solid fa-circle-check text-brand-500 mr-2.5 mt-0.5"></i>
+                                <span>Weekly Email Progress Review</span>
+                            </li>
+                            <li class="flex items-start text-xs text-neutral-400 leading-relaxed">
+                                <i class="fa-solid fa-circle-check text-brand-500 mr-2.5 mt-0.5"></i>
+                                <span>R3DREPS E-Book: "Nutrition Myths Destroyed"</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="#contact" onclick="selectPackage('Nourished Fuel Plan')" class="block w-full text-center bg-dark-900 border border-dark-600 hover:border-brand-500 text-white font-display uppercase tracking-widest text-xs font-bold py-3 px-4 rounded transition-all">
+                            Choose Baseline
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 2 (Best Seller - WHGym Vibe) -->
+                <div class="bg-dark-950 rounded-2xl p-8 border-2 border-brand-500 flex flex-col justify-between relative shadow-[0_0_25px_rgba(255,30,39,0.15)] transform lg:-translate-y-4">
+                    <span class="absolute top-0 right-8 -translate-y-1/2 bg-brand-500 text-white text-[9px] font-display uppercase tracking-widest font-bold px-4 py-1.5 shadow-md">
+                        🏆 Highly Recommended
+                    </span>
+                    
+                    <div>
+                        <span class="text-[9px] bg-brand-500/10 border border-brand-500/30 text-brand-500 font-display font-bold px-3 py-1 rounded uppercase tracking-widest">Apex Protocol</span>
+                        <h3 class="font-display text-2xl font-bold text-white uppercase tracking-wider mt-4">Empowered Transformation</h3>
+                        <p class="text-xs text-neutral-400 mt-1 font-light">Uniting full metabolic nutrition with heavy weight lifting guides.</p>
+                        
+                        <div class="my-6">
+                            <span class="text-neutral-500 line-through text-xs">$349</span>
+                            <div class="flex items-baseline">
+                                <span class="text-5xl font-display font-bold text-white tracking-tight">$199</span>
+                                <span class="text-brand-500 text-xs ml-1">/ month</span>
+                            </div>
+                            <span class="text-[9px] text-brand-500 border border-brand-500/30 font-display tracking-widest uppercase bg-brand-500/5 px-2 py-0.5 rounded mt-2 inline-block">Best Value - Save 43%</span>
+                        </div>
+
+                        <!-- Highlights list -->
+                        <ul class="space-y-3.5 border-t border-brand-500/20 pt-6">
+                            <li class="flex items-start text-xs text-neutral-300 leading-relaxed">
+                                <i class="fa-solid fa-circle-check text-brand-500 mr-2.5 mt-0.5"></i>
+                                <span class="font-bold">Fully Customized Meal Plans & Swaps</span>
+                            </li>
+                            <li class="flex items-start text-xs text-neutral-300 leading-relaxed">
+                                <i class="fa-solid fa-circle-check text-brand-500 mr-2.5 mt-0.5"></i>
+                                <span class="font-bold">Tailored Gym or Home Training Plan</span>
+                            </li>
+                            <li class="flex items-start text-xs text-neutral-300 leading-relaxed">
+                                <i class="fa-solid fa-circle-check text-brand-500 mr-2.5 mt-0.5"></i>
+                                <span>Weekly 1-on-1 Loom Video Audit & Adjustments</span>
+                            </li>
+                            <li class="flex items-start text-xs text-neutral-300 leading-relaxed">
+                                <i class="fa-solid fa-circle-check text-brand-500 mr-2.5 mt-0.5"></i>
+                                <span class="text-brand-500">24/7 Priority Discord/WhatsApp Support</span>
+                            </li>
+                            <li class="flex items-start text-xs text-neutral-300 leading-relaxed">
+                                <i class="fa-solid fa-circle-check text-brand-500 mr-2.5 mt-0.5"></i>
+                                <span>Biochemical Cycle Synchronization Layouts</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="#contact" onclick="selectPackage('Empowered Transformation')" class="block w-full text-center bg-brand-500 hover:bg-brand-600 text-white font-display uppercase tracking-widest text-xs font-bold py-3.5 px-4 rounded transition-all shadow-[0_0_15px_rgba(255,30,39,0.3)]">
+                            Claim Deal Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="bg-dark-950 rounded-2xl p-8 border border-dark-600 flex flex-col justify-between relative shadow-lg hover:border-brand-500 transition-all">
+                    <div>
+                        <span class="text-[9px] bg-dark-800 border border-dark-600 text-neutral-400 font-display font-bold px-3 py-1 rounded uppercase tracking-widest">Elite Care</span>
+                        <h3 class="font-display text-2xl font-bold text-white uppercase tracking-wider mt-4">1-on-1 Elite Concierge</h3>
+                        <p class="text-xs text-neutral-500 mt-1 font-light">Premium daily accountability, bloodwork evaluation, zoom integration.</p>
+                        
+                        <div class="my-6">
+                            <span class="text-neutral-500 line-through text-xs">$499</span>
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-display font-bold text-brand-500">$349</span>
+                                <span class="text-neutral-500 text-xs ml-1">/ month</span>
+                            </div>
+                            <span class="text-[9px] text-brand-500 border border-brand-500/30 font-display tracking-widest uppercase bg-brand-500/5 px-2 py-0.5 rounded mt-2 inline-block">Save 30% VIP Intake</span>
+                        </div>
+
+                        <!-- Highlights list -->
+                        <ul class="space-y-3.5 border-t border-dark-600 pt-6">
+                            <li class="flex items-start text-xs text-neutral-400 leading-relaxed">
+                                <i class="fa-solid fa-circle-check text-brand-500 mr-2.5 mt-0.5"></i>
+                                <span class="font-bold">Daily WhatsApp Checks & Form Review</span>
+                            </li>
+                            <li class="flex items-start text-xs text-neutral-400 leading-relaxed">
+                                <i class="fa-solid fa-circle-check text-brand-500 mr-2.5 mt-0.5"></i>
+                                <span>Includes Entire Empowered Transformation Protocol</span>
+                            </li>
+                            <li class="flex items-start text-xs text-neutral-400 leading-relaxed">
+                                <i class="fa-solid fa-circle-check text-brand-500 mr-2.5 mt-0.5"></i>
+                                <span>Endocrine Panel & Thyroid Indicator Analysis</span>
+                            </li>
+                            <li class="flex items-start text-xs text-neutral-400 leading-relaxed">
+                                <i class="fa-solid fa-circle-check text-brand-500 mr-2.5 mt-0.5"></i>
+                                <span>Weekly Zoom 1-on-1 Consultation Syncs</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="#contact" onclick="selectPackage('1-on-1 Elite Concierge')" class="block w-full text-center bg-dark-900 border border-dark-600 hover:border-brand-500 text-white font-display uppercase tracking-widest text-xs font-bold py-3 px-4 rounded transition-all">
+                            Choose Elite Care
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-dark-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-display tracking-widest uppercase text-xs">Verified Athletes</span>
+                <h2 class="font-display text-4xl sm:text-5xl font-bold text-white uppercase tracking-tight mt-2">
+                    They Stopped Guessing & Built Power
+                </h2>
+                <p class="text-neutral-400 mt-4 font-light text-sm">
+                    Read the verified results of real athletes who replaced starvation routines with high-intensity structural loading.
+                </p>
+                <div class="w-20 h-1 bg-brand-500 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-dark-900 rounded-2xl p-8 border border-dark-600 relative flex flex-col justify-between shadow-lg">
+                    <span class="absolute top-4 right-6 text-5xl text-brand-500/10 font-serif">“</span>
+                    <div>
+                        <!-- Rating -->
+                        <div class="flex items-center space-x-1 mb-4 text-brand-500">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-neutral-300 italic text-xs leading-relaxed">
+                            "Before working with R3DREPS, I was maintaining an exhausting, starvation-level 1,100 calories daily while grinding through cardio. My energy was non-existent. Now, I eat 2,100 calories, lift with total confidence 3-4 days a week, and my core looks extremely tight. Absolutely unbelievable transformation!"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-6 pt-6 border-t border-dark-600">
+                        <div class="w-12 h-12 bg-dark-950 border border-brand-500/40 text-brand-500 rounded-full flex items-center justify-center font-display font-bold">
+                            LM
+                        </div>
+                        <div>
+                            <h4 class="font-display text-white text-sm uppercase tracking-wider">Lauren M.</h4>
+                            <p class="text-[9px] text-brand-500 font-display uppercase tracking-widest">Corporate Executive (Built Lean Mass)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-dark-900 rounded-2xl p-8 border border-dark-600 relative flex flex-col justify-between shadow-lg">
+                    <span class="absolute top-4 right-6 text-5xl text-brand-500/10 font-serif">“</span>
+                    <div>
+                        <!-- Rating -->
+                        <div class="flex items-center space-x-1 mb-4 text-brand-500">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-neutral-300 italic text-xs leading-relaxed">
+                            "I avoided carbohydrate blocks out of pure phobia. The custom nutritional strategy matches my hormonal cycles, and I no longer deal with chronic fatigue or bloating. My performance in the gym is spectacular!"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-6 pt-6 border-t border-dark-600">
+                        <div class="w-12 h-12 bg-dark-950 border border-brand-500/40 text-brand-500 rounded-full flex items-center justify-center font-display font-bold">
+                            SK
+                        </div>
+                        <div>
+                            <h4 class="font-display text-white text-sm uppercase tracking-wider">Sofia K.</h4>
+                            <p class="text-[9px] text-brand-500 font-display uppercase tracking-widest">Creative Lead (Endocrine Recovery)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-dark-900 rounded-2xl p-8 border border-dark-600 relative flex flex-col justify-between shadow-lg">
+                    <span class="absolute top-4 right-6 text-5xl text-brand-500/10 font-serif">“</span>
+                    <div>
+                        <!-- Rating -->
+                        <div class="flex items-center space-x-1 mb-4 text-brand-500">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-neutral-300 italic text-xs leading-relaxed">
+                            "The WhatsApp check-in audits and form-check video replies built total accountability. I lost 3 inches off my waistline and doubled my barbell deadlift. Empowered Transformation was worth every single penny."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-6 pt-6 border-t border-dark-600">
+                        <div class="w-12 h-12 bg-dark-950 border border-brand-500/40 text-brand-500 rounded-full flex items-center justify-center font-display font-bold">
+                            HR
+                        </div>
+                        <div>
+                            <h4 class="font-display text-white text-sm uppercase tracking-wider">Hannah R.</h4>
+                            <p class="text-[9px] text-brand-500 font-display uppercase tracking-widest">Secondary Educator (Barbell Strength)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Industrial WhGym Dark Aesthetics) -->
+    <section id="contact" class="py-20 bg-dark-950 text-white relative border-t border-dark-600">
+        <!-- Background elements -->
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-brand-500/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brand-500 font-display tracking-widest uppercase text-xs">Deployment Gate</span>
+                    <h2 class="font-display text-4xl sm:text-5xl font-bold uppercase tracking-tight">
+                        Initiate Consultation
+                    </h2>
+                    <p class="text-neutral-400 leading-relaxed max-w-md font-light text-sm">
+                        Ready to drop restrictive diet systems and start building actual physical power? Contact me directly using our channels below.
+                    </p>
+
+                    <!-- Direct Contacts Panel -->
+                    <div class="space-y-4 pt-6">
+                        <!-- Email -->
+                        <div class="flex items-center space-x-4">
+                            <span class="w-12 h-12 rounded bg-dark-900 text-brand-500 flex items-center justify-center text-lg border border-dark-600">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <div>
+                                <p class="text-[10px] text-neutral-500 font-display uppercase tracking-widest">Secure Mailing</p>
+                                <a href="mailto:coach@r3dreps.com" class="text-sm font-semibold hover:text-brand-500 transition-colors">coach@r3dreps.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-center space-x-4">
+                            <span class="w-12 h-12 rounded bg-dark-900 text-brand-500 flex items-center justify-center text-lg border border-dark-600">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+                            <div>
+                                <p class="text-[10px] text-neutral-500 font-display uppercase tracking-widest">Phone & WhatsApp Direct</p>
+                                <a href="tel:+15550192834" class="text-sm font-semibold hover:text-brand-500 transition-colors">+1 (555) 019-2834</a>
+                            </div>
+                        </div>
+
+                        <!-- Instagram -->
+                        <div class="flex items-center space-x-4">
+                            <span class="w-12 h-12 rounded bg-dark-900 text-brand-500 flex items-center justify-center text-lg border border-dark-600">
+                                <i class="fa-brands fa-instagram"></i>
+                            </span>
+                            <div>
+                                <p class="text-[10px] text-neutral-500 font-display uppercase tracking-widest">Instagram Community</p>
+                                <a href="https://instagram.com/r3dreps_coaching" target="_blank" class="text-sm font-semibold hover:text-brand-500 transition-colors">@r3dreps_coaching</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forms Column -->
+                <div class="lg:col-span-7">
+                    <div class="bg-dark-900 border border-dark-600 p-8 rounded-xl shadow-2xl">
+                        <h3 class="font-display text-2xl font-bold uppercase tracking-wider mb-2 text-white">Apply for Intake</h3>
+                        <p class="text-xs text-neutral-400 mb-6 font-light">Submit your profile parameters. I will personally reply within 24 hours.</p>
+                        
+                        <!-- Success Message -->
+                        <div id="contact-success" class="hidden bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 p-4 rounded mb-6 text-sm flex items-start space-x-2">
+                            <i class="fa-solid fa-circle-check text-emerald-500 text-lg mt-0.5 animate-bounce"></i>
+                            <div>
+                                <strong class="font-display uppercase tracking-wider block">Intake Form Logged!</strong>
+                                <span class="text-xs text-neutral-300">Your metabolic/strength goals have been successfully received. Stand by for your custom email proposal.</span>
+                            </div>
+                        </div>
+
+                        <form id="consultation-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[10px] font-display uppercase tracking-widest text-neutral-400 mb-1.5">First Name</label>
+                                    <input type="text" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white" placeholder="Sarah">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-display uppercase tracking-widest text-neutral-400 mb-1.5">Last Name</label>
+                                    <input type="text" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white" placeholder="Miller">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[10px] font-display uppercase tracking-widest text-neutral-400 mb-1.5">Email Address</label>
+                                    <input type="email" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white" placeholder="sarah@example.com">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-display uppercase tracking-widest text-neutral-400 mb-1.5">Direct Line</label>
+                                    <input type="tel" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white" placeholder="+1 (555) 000-0000">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-[10px] font-display uppercase tracking-widest text-neutral-400 mb-1.5">Target Bundle Focus</label>
+                                <select id="interest-package" class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all text-neutral-200 uppercase tracking-widest font-display">
+                                    <option value="None Selected">Let's formulate on a call</option>
+                                    <option value="Nourished Fuel Plan">Nourished Fuel Plan (Baseline Deal)</option>
+                                    <option value="Empowered Transformation">Empowered Transformation (Apex Deal)</option>
+                                    <option value="1-on-1 Elite Concierge">1-on-1 Elite Concierge (VIP Deal)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-[10px] font-display uppercase tracking-widest text-neutral-400 mb-1.5">Highlight Your Goals & Current Hurdles</label>
+                                <textarea rows="3" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white resize-none" placeholder="Let me know about your historical hurdles, metabolic rate, chronic dieting history..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-display uppercase tracking-widest text-xs font-bold py-4 px-6 rounded transition-all shadow-lg flex items-center justify-center space-x-2">
+                                <span>Dispatch Intake Data</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Image 1 Slogan -->
+    <footer class="bg-black border-t border-dark-600 py-12 text-center text-xs text-neutral-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <!-- Image 1 Slogan: "EAT SMART. TRAIN HARD. STAY LEAN." enclosed in hearts -->
+            <div class="flex items-center justify-center space-x-2 text-brand-500 font-display uppercase tracking-widest text-sm font-bold">
+                <i class="fa-solid fa-heart text-xs animate-pulse"></i>
+                <span>EAT SMART. TRAIN HARD. STAY LEAN.</span>
+                <i class="fa-solid fa-heart text-xs animate-pulse"></i>
+            </div>
+            
+            <p class="font-display text-lg font-bold text-white tracking-wider">
+                R3D<span class="text-brand-500">REPS</span> COACHING
+            </p>
+            <p class="max-w-md mx-auto text-[10px] text-neutral-600 leading-relaxed uppercase tracking-wider">
+                Disclaimer: The custom meal matrices and strength blueprints offered herein contain intense loaded suggestions. Consult primary healthcare doctors prior to implementation.
+            </p>
+            <p class="text-[9px] text-neutral-700">&copy; 2026 R3DREPS Wellness Systems. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts & Dashboard Formulating Logic -->
+    <script>
+        // Responsive Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = "fa-solid fa-bars text-2xl";
+            } else {
+                menuIcon.className = "fa-solid fa-xmark text-2xl";
+            }
+        });
+
+        // Close mobile drawer when clicking links
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = "fa-solid fa-bars text-2xl";
+            });
+        });
+
+        // Toggle Myths
+        function toggleMyth(id) {
+            const front = document.getElementById(`myth-front-${id}`);
+            const back = document.getElementById(`myth-back-${id}`);
+            
+            if (back.classList.contains('hidden')) {
+                back.classList.remove('hidden');
+                front.classList.add('opacity-0');
+            } else {
+                back.classList.add('hidden');
+                front.classList.remove('opacity-0');
+            }
+        }
+
+        // Selected Package Trigger
+        function selectPackage(packageName) {
+            const selectElement = document.getElementById('interest-package');
+            selectElement.value = packageName;
+        }
+
+        // Goals State variables for customizer
+        let currentGoal = '';
+
+        function setGoal(goal) {
+            currentGoal = goal;
+            // Clear styles
+            const fatBtn = document.getElementById('btn-fat-loss');
+            const musBtn = document.getElementById('btn-muscle-energy');
+            
+            fatBtn.className = "goal-btn py-3 px-4 rounded-lg text-xs font-display uppercase tracking-widest border transition-all flex flex-col items-center justify-center space-y-1.5 bg-dark-900 border-dark-600 text-neutral-400";
+            musBtn.className = "goal-btn py-3 px-4 rounded-lg text-xs font-display uppercase tracking-widest border transition-all flex flex-col items-center justify-center space-y-1.5 bg-dark-900 border-dark-600 text-neutral-400";
+
+            if (goal === 'fat-loss') {
+                fatBtn.className = "goal-btn py-3 px-4 rounded-lg text-xs font-display uppercase tracking-widest border transition-all flex flex-col items-center justify-center space-y-1.5 bg-brand-500/10 border-brand-500 text-brand-500 shadow-sm shadow-brand-500/20";
+            } else if (goal === 'muscle-energy') {
+                musBtn.className = "goal-btn py-3 px-4 rounded-lg text-xs font-display uppercase tracking-widest border transition-all flex flex-col items-center justify-center space-y-1.5 bg-brand-500/10 border-brand-500 text-brand-500 shadow-sm shadow-brand-500/20";
+            }
+        }
+
+        // Initialize default goal state
+        setGoal('fat-loss');
+
+        // Circular ring animation setter
+        function setProgressOffset(circleId, percentage, radius) {
+            const circle = document.getElementById(circleId);
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (percentage / 100) * circumference;
+            circle.style.strokeDashoffset = offset;
+        }
+
+        // Generator logic
+        function generateSamplePlan() {
+            // Un-hide output card & hide default placeholder
+            document.getElementById('customizer-placeholder').classList.add('hidden');
+            const output = document.getElementById('customizer-output');
+            output.classList.remove('hidden');
+
+            const dietPref = document.getElementById('diet-preference').value;
+            const workoutEnv = document.getElementById('workout-env').value;
+
+            // DOM fields to fill
+            const calText = document.getElementById('calc-calories');
+            const protText = document.getElementById('calc-protein');
+            const carbText = document.getElementById('calc-carbs');
+            const fatText = document.getElementById('calc-fats');
+            const workText = document.getElementById('calc-workouts');
+            
+            const bfast = document.getElementById('meal-breakfast');
+            const lunch = document.getElementById('meal-lunch');
+            const dinner = document.getElementById('meal-dinner');
+            
+            const workTitle = document.getElementById('workout-focus');
+            const workList = document.getElementById('workout-list');
+
+            if (currentGoal === 'fat-loss') {
+                calText.innerHTML = "1,750 <span class='text-sm font-normal text-brand-500'>kcal</span>";
+                protText.innerText = "135g";
+                carbText.innerText = "160g";
+                fatText.innerText = "55g";
+                workText.innerText = "Metabolism Re-Ignition";
+
+                // Set SVG Progress Rings
+                setProgressOffset('ring-calories', 65, 50); // 65% of track
+                setProgressOffset('ring-protein', 80, 24);   // Protein high
+                setProgressOffset('ring-carbs', 50, 24);     // Carbs moderate
+                setProgressOffset('ring-fats', 45, 24);      // Fats low
+
+                // Meal plans adjustments
+                if (dietPref === 'balanced') {
+                    bfast.innerText = "Egg white & whole egg scramble (3 eggs total), half avocado, spinach leaves, 1 slice organic seeded rye bread.";
+                    lunch.innerText = "150g grilled chicken tenders, mixed field greens, cucumbers, light vinaigrette dressing & 100g jasmine rice.";
+                    dinner.innerText = "140g extra lean turkey mince stir fry cooked in coconut oil, cauliflower rice, side of buttered green beans.";
+                } else if (dietPref === 'pescatarian') {
+                    bfast.innerText = "Smoked salmon slices on fluffy smashed avocado toast, with fresh microgreens, squeeze of fresh lemon.";
+                    lunch.innerText = "150g tuna mixed with clean Greek yogurt herb dressing, sliced cucumbers, and raw red bell peppers.";
+                    dinner.innerText = "150g wild cod fillet, large serving of roasted garlic broccoli, oven-baked sweet potato wedges.";
+                } else if (dietPref === 'vegetarian') {
+                    bfast.innerText = "Fat-free cottage cheese cup topped with pumpkin seeds, raspberries, chia, and raw honey drizzle.";
+                    lunch.innerText = "Organic crispy tofu cubed over quinoa salad, edamame pods, grated carrots, dynamic spicy ginger dip.";
+                    dinner.innerText = "Lentil, spinach, and feta cheese protein bowl with wild mushrooms and roasted artichoke hearts.";
+                } else { // vegan
+                    bfast.innerText = "Scrambled organic extra-firm tofu with nutritional yeast, red onions, spinach, and 1 slice seeded bread.";
+                    lunch.innerText = "Thick vegan protein wrap stuffed with shredded tempeh, dark spinach, diced cucumbers, and cashew cream.";
+                    dinner.innerText = "Hearty edamame, chickpea, and sweet potato curry over hot cauliflower rice, topped with cilantro.";
+                }
+
+                // Workouts Fat Loss
+                if (workoutEnv === 'gym') {
+                    workTitle.innerText = "Lower Body Hypertrophy & Metabolic Spark (Gym)";
+                    workList.innerHTML = `
+                        <li>Smith Machine Hip Thrusts: 4 sets x 10 reps (Heavy Load, 2-sec hold)</li>
+                        <li>Leg Press (High & Wide Foot Placement): 3 sets x 12 reps</li>
+                        <li>Dumbbell Romanian Deadlifts: 3 sets x 12 reps</li>
+                        <li>Cable Glute Kickbacks: 3 sets x 15 reps (Strict concentric)</li>
+                        <li>Incline Treadmill Walk: 15 minutes (Steady zone-2 recovery)</li>
+                    `;
+                } else { // home
+                    workTitle.innerText = "Home Resistance & Lean Sculpt Block (Bands/DBs)";
+                    workList.innerHTML = `
+                        <li>Dumbbell Glute Bridges: 4 sets x 15 reps (Squeeze peak)</li>
+                        <li>Dumbbell Goblet Squats: 3 sets x 12 reps (Controlled tempo)</li>
+                        <li>Single-leg DB Romanian Deadlifts: 3 sets x 10 reps per side</li>
+                        <li>Heavy Banded Lateral Walks: 3 sets x 20 steps</li>
+                        <li>Plank Shoulder Taps: 3 sets x 45 seconds</li>
+                    `;
+                }
+
+            } else { // muscle & strength (Strength & Load)
+                calText.innerHTML = "2,200 <span class='text-sm font-normal text-brand-500'>kcal</span>";
+                protText.innerText = "145g";
+                carbText.innerText = "230g";
+                fatText.innerText = "70g";
+                workText.innerText = "High Load Capacity";
+
+                // Set SVG Progress Rings
+                setProgressOffset('ring-calories', 85, 50); // 85% of track
+                setProgressOffset('ring-protein', 90, 24);   // Protein very high
+                setProgressOffset('ring-carbs', 85, 24);     // Carbs high
+                setProgressOffset('ring-fats', 75, 24);      // Fats moderate
+
+                // Meal plans adjustments
+                if (dietPref === 'balanced') {
+                    bfast.innerText = "3 whole pasture eggs cooked in grass-fed butter, 2 slices whole-wheat sourdough, half an avocado.";
+                    lunch.innerText = "160g premium grilled chicken breast, loaded basmati rice (200g cooked), roasted broccoli crowns.";
+                    dinner.innerText = "160g pan-seared steak medallions, loaded baked sweet potato, asparagus stalks sautéed in avocado oil.";
+                } else if (dietPref === 'pescatarian') {
+                    bfast.innerText = "Organic steel cut oats cooked in soy milk, stirred with whey isolate protein, peanut butter, and sliced bananas.";
+                    lunch.innerText = "Blackened shrimp bowls over fluffy seasoned brown rice, loaded black beans, and organic avocado slices.";
+                    dinner.innerText = "160g wild sockeye salmon fillet over roasted sweet potato cubes, side salad with walnuts.";
+                } else if (dietPref === 'vegetarian') {
+                    bfast.innerText = "High-protein pancakes made with Greek yogurt, organic eggs, topped with maple syrup, mixed berries.";
+                    lunch.innerText = "Creamy paneer and chickpea masala served with loaded saffron basmati rice and flatbread.";
+                    dinner.innerText = "Loaded black bean and organic cheddar quesadilla, fresh homemade guacamole, side of mixed greens.";
+                } else { // vegan
+                    bfast.innerText = "High-protein oats loaded with pumpkin seed butter, hemp seeds, organic banana, and crushed raw almonds.";
+                    lunch.innerText = "Sautéed Tempeh bowl with sweet brown rice, edamame pods, fresh avocado cubes, and tahini drizzle.";
+                    dinner.innerText = "High-protein Seitan stir-fry with mixed bell peppers, roasted cashews, and organic rice noodles.";
+                }
+
+                // Workouts Muscle
+                if (workoutEnv === 'gym') {
+                    workTitle.innerText = "Posterior Chain Glute & Back Focus (Gym)";
+                    workList.innerHTML = `
+                        <li>Barbell Hip Thrusts: 4 sets x 8 reps (Heavy overload progression, RPE 9)</li>
+                        <li>Wide Lat Pulldowns: 3 sets x 10 reps (Toning postural back)</li>
+                        <li>Barbell Romanian Deadlifts: 3 sets x 8 reps (Heavy load execution)</li>
+                        <li>Seated Cable Rows: 3 sets x 10 reps (Squeeze scapula)</li>
+                        <li>DB Hammer Curl to Overhead Press: 3 sets x 10 reps</li>
+                    `;
+                } else { // home
+                    workTitle.innerText = "Home Resistance & High Load Stimulus (DBs)";
+                    workList.innerHTML = `
+                        <li>Dumbbell Goblet Squats: 4 sets x 10 reps (Heaviest DB)</li>
+                        <li>Single-Arm Dumbbell Rows: 3 sets x 12 reps per arm</li>
+                        <li>Heavy DB Romanian Deadlifts: 3 sets x 10 reps</li>
+                        <li>Dumbbell Floor Chest Press: 3 sets x 12 reps</li>
+                        <li>Banded Face Pulls: 3 sets x 15 reps (Scapular control)</li>
+                    `;
+                }
+            }
+        }
+
+        // Contact Form Submission Mock
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            // Get form fields
+            const form = document.getElementById('consultation-form');
+            const successBox = document.getElementById('contact-success');
+
+            // Hide form inputs and button beautifully, show success status
+            form.classList.add('opacity-40');
+            successBox.classList.remove('hidden');
+            
+            // Scroll success box into view smoothly
+            successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Disable all form components
+            const elements = form.elements;
+            for (let i = 0, len = elements.length; i < len; ++i) {
+                elements[i].disabled = true;
+            }
+        }
+    </script>
+</body>
+</html> 
