@@ -88,9 +88,7 @@
                 <div class="flex items-center">
                     <a href="#" class="flex items-center space-x-3 group">
                         <!-- Custom SVG Logo reflecting Image 2 logo -->
-                        <div class="relative w-11 h-11 flex items-center justify-center rounded-full border border-brand-500 bg-black overflow-hidden group-hover:scale-105 transition-transform">
-                            <img src="images/Logo.jpg" alt="R3DREPS Logo" class="w-9 h-9 object-contain">
-                        </div>
+                        <img src="images/Logo.jpg" alt="R3DREPS Logo" class="w-9 h-9 object-contain">
                         <div class="flex flex-col">
                             <span class="font-display text-2xl font-bold tracking-wider text-white">
                                 R3D<span class="text-brand-500">REPS</span>
@@ -1050,28 +1048,28 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-[10px] font-display uppercase tracking-widest text-neutral-400 mb-1.5">First Name</label>
-                                    <input type="text" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white" placeholder="Sarah">
+                                    <input type="text" name="first_name" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white" placeholder="Sarah">
                                 </div>
                                 <div>
                                     <label class="block text-[10px] font-display uppercase tracking-widest text-neutral-400 mb-1.5">Last Name</label>
-                                    <input type="text" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white" placeholder="Miller">
+                                    <input type="text" name="last_name" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white" placeholder="Miller">
                                 </div>
                             </div>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-[10px] font-display uppercase tracking-widest text-neutral-400 mb-1.5">Email Address</label>
-                                    <input type="email" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white" placeholder="sarah@example.com">
+                                    <input type="email" name="email" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white" placeholder="sarah@example.com">
                                 </div>
                                 <div>
                                     <label class="block text-[10px] font-display uppercase tracking-widest text-neutral-400 mb-1.5">Direct Line</label>
-                                    <input type="tel" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white" placeholder="+1 (555) 000-0000">
+                                    <input type="tel" name="phone" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white" placeholder="+1 (555) 000-0000">
                                 </div>
                             </div>
 
                             <div>
                                 <label class="block text-[10px] font-display uppercase tracking-widest text-neutral-400 mb-1.5">Target Bundle Focus</label>
-                                <select id="interest-package" class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all text-neutral-200 uppercase tracking-widest font-display">
+                                <select id="interest-package" name="package" class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all text-neutral-200 uppercase tracking-widest font-display">
                                     <option value="None Selected">Let's formulate on a call</option>
                                     <option value="Nourished Fuel Plan">Nourished Fuel Plan (Baseline Deal)</option>
                                     <option value="Empowered Transformation">Empowered Transformation (Apex Deal)</option>
@@ -1081,7 +1079,7 @@
 
                             <div>
                                 <label class="block text-[10px] font-display uppercase tracking-widest text-neutral-400 mb-1.5">Highlight Your Goals & Current Hurdles</label>
-                                <textarea rows="3" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white resize-none" placeholder="Let me know about your historical hurdles, metabolic rate, chronic dieting history..."></textarea>
+                                <textarea name="message" rows="3" required class="w-full bg-dark-950 border border-dark-600 focus:border-brand-500 rounded px-4 py-3 text-xs outline-none transition-all placeholder:text-neutral-700 text-white resize-none" placeholder="Let me know about your historical hurdles, metabolic rate, chronic dieting history..."></textarea>
                             </div>
 
                             <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-display uppercase tracking-widest text-xs font-bold py-4 px-6 rounded transition-all shadow-lg flex items-center justify-center space-x-2">
@@ -1322,12 +1320,28 @@
             }
         }
 
-        // Contact Form Submission Mock
         function handleContactSubmit(event) {
             event.preventDefault();
             
             // Get form fields
             const form = document.getElementById('consultation-form');
+            const formData = new FormData(form);
+            
+            // Construct email body
+            let body = `R3DREPS Intake Form Submission:\n\n`;
+            body += `First Name: ${formData.get('first_name')}\n`;
+            body += `Last Name: ${formData.get('last_name')}\n`;
+            body += `Email: ${formData.get('email')}\n`;
+            body += `Phone: ${formData.get('phone')}\n`;
+            body += `Package: ${formData.get('package')}\n`;
+            body += `Goals: ${formData.get('message')}\n`;
+            
+            const subject = `R3DREPS Intake Form: ${formData.get('first_name')} ${formData.get('last_name')}`;
+            const mailtoLink = `mailto:k.bhargav017@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Trigger email client
+            window.location.href = mailtoLink;
+
             const successBox = document.getElementById('contact-success');
 
             // Hide form inputs and button beautifully, show success status
